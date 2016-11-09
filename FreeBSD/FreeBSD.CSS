@@ -2,28 +2,31 @@
  margin: 0px;
  padding: 0px;
 }
+/* by putting the width on the parent element all the block elements inside will want to be 100% width of the parent. This means sections like #header and #nav_bar do not need to have a width added to them*/
 #container{
   background-color: white;
+  width: 970px;
+  margin: 0 auto;
 }
 #header{
   background-color: #cc0000;
-  width: 970px;
+  /*width: 970px;*/
   height: 100px;
   overflow: hidden;
 }
-#header img, h2{
-  display:inline-block;
-  vertical-align: top;
-  margin: 5px;
-}
-#header img{
-  margin-top: 20px;
-}
-#header h2{
-  margin-top: 30px;
-  font-size: 22px;
-  color: white;
-}
+  #header img, h2{
+    display:inline-block;
+    vertical-align: top;
+    margin: 5px;
+  }
+  #header img{
+    margin-top: 20px;
+  }
+  #header h2{
+    margin-top: 30px;
+    font-size: 22px;
+    color: white;
+  }
 .right_header{
   margin-left: 130px;
   margin-top: 10px;
