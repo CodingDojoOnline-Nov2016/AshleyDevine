@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'login_and_registration/normalize.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'login_and_registration/skeleton.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'login_and_registration/styles.css' %}">
+    <title></title>
+  </head>
+  <body>
+    <label for="">Login to your BigFoot Portal!!</label>
+    {% if messages %}
+      {% for message in messages%}
+        <p> {{ message }} </p>
+      {% endfor %}
+    {% endif %}
+    <form class="" action="/login" method="post">
+      {% csrf_token %}
+      <input type="text" name="email" placeholder="Email">
+      <input type="password" name="password" placeholder="Password">
+      <input type="submit" name="login" placeholder="Login!">
+    </form>
+    <label for="">Don't have an account? Register for a BigFoot Profile!!</label>
+    <form class="" action="/register" method="post">
+      {% csrf_token %}
+      <input type="text" name="first_name" placeholder="First Name">
+      <input type="text" name="last_name" placeholder="Last Name">
+      <input type="text" name="email" placeholder="Email">
+      <input type="password" name="password" placeholder="Password">
+      <input type="password" name="confirm_password" placeholder="Confirm Password">
+      <input type="date" name="birthdate" value="">
+      <input type="submit" name="submit" placeholder="Register!">
+    </form>
+  </body>
+</html>
